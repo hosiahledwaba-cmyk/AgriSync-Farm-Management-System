@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 140 20% 98%;
+  --foreground: 140 10% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 140 10% 12%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 140 10% 12%;
+  --primary: 142 71% 32%;
+  --primary-foreground: 355 100% 97%;
+  --secondary: 140 20% 92%;
+  --secondary-foreground: 140 30% 20%;
+  --muted: 140 15% 94%;
+  --muted-foreground: 140 10% 40%;
+  --accent: 140 25% 90%;
+  --accent-foreground: 140 30% 18%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 140 15% 88%;
+  --input: 140 15% 86%;
+  --ring: 142 71% 32%;
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: 150 18% 8%;
+  --foreground: 140 15% 95%;
+  --card: 150 18% 11%;
+  --card-foreground: 140 15% 95%;
+  --popover: 150 18% 11%;
+  --popover-foreground: 140 15% 95%;
+  --primary: 142 65% 42%;
+  --primary-foreground: 150 30% 98%;
+  --secondary: 150 15% 18%;
+  --secondary-foreground: 140 15% 95%;
+  --muted: 150 15% 16%;
+  --muted-foreground: 140 10% 65%;
+  --accent: 150 15% 18%;
+  --accent-foreground: 140 15% 95%;
+  --destructive: 0 62.8% 45%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 150 15% 20%;
+  --input: 150 15% 22%;
+  --ring: 142 65% 42%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Responsive table styling used in dashboards */
+.responsive-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+@media (max-width: 768px) {
+  .responsive-table table, 
+  .responsive-table thead, 
+  .responsive-table tbody, 
+  .responsive-table th, 
+  .responsive-table td, 
+  .responsive-table tr { 
+    display: block; 
+  }
+  
+  .responsive-table thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  .responsive-table tr { 
+    border: 1px solid hsl(var(--border));
+    margin-bottom: 0.75rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: hsl(var(--card));
+  }
+  
+  .responsive-table td { 
+    border: none;
+    position: relative;
+    padding-left: 50% !important; 
+    text-align: right !important;
+  }
+  
+  .responsive-table td:before { 
+    position: absolute;
+    left: 0.75rem;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+    text-align: left;
+    font-weight: 600;
+    color: hsl(var(--muted-foreground));
+    content: attr(data-label);
+  }
+}

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Conversation, Message, User, MessageReference, Task, Shift, Equipment, InventoryItem, Field, Livestock } from '../../types';
+import { Conversation, Message, User, MessageReference, Task, Shift, Equipment, InventoryItem, Field, Livestock } from '../types';
 import ConversationList from './messaging/ConversationList';
 import MessageView from './messaging/MessageView';
 import { MessageSquareIcon } from './ui/Icon';

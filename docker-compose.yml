@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  agrisync:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: agrisync-app
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1/"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
